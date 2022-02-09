@@ -452,7 +452,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16173708cd63ea74c8b00559cce215b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 50
+  moveSensitivity: 50
   steerSensitivity: 5
   steerDeadzone: 2
 --- !u!1 &436395516

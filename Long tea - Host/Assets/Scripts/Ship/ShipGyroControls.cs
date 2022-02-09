@@ -9,7 +9,7 @@ public class ShipGyroControls : MonoBehaviour
     Vector3 rotation;
     Rigidbody rb;
 
-    [SerializeField] private float moveSpeed = 3f;
+    [SerializeField] private float moveSensitivity = 3f;
     [SerializeField] private float steerSensitivity = 2;
     [SerializeField] private float steerDeadzone = 20;
 
@@ -21,22 +21,19 @@ public class ShipGyroControls : MonoBehaviour
     }
 
     void FixedUpdate()
-    {        
-        RotateShip();
-        MoveShip();
+    {
+        ControlShip();
     }
 
-    void RotateShip()
+    void ControlShip()
     {
         rotation = gyro.attitude.eulerAngles;
         float zRot = rotation.z;
+        float yRot = rotation.y;
         //Debug.Log(System.Math.Round(rotation.x, 2) + " " + System.Math.Round(rotation.y, 2) + " " + System.Math.Round(rotation.z, 2));
         Debug.Log(System.Math.Round(rotation.y, 2));
+        if (zRot < 90) zRot = 360;
         transform.eulerAngles += (new Vector3(0, -(zRot - 260), 0) / 100) * steerSensitivity;
-    }
-
-    void MoveShip()
-    {
-        rb.AddForce(transform.forward * (moveSpeed * 50) * Time.fixedDeltaTime);
+        rb.AddForce(transform.forward * (moveSensitivity * 50) * Time.fixedDeltaTime);
     }
 }
