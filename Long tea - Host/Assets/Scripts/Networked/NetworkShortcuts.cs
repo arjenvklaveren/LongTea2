@@ -1,10 +1,12 @@
 using Mirror;
 using UnityEngine;
 using TMPro;
+using Mirror.Discovery;
 
 public class NetworkShortcuts : MonoBehaviour
 {
     [SerializeField] private TMP_InputField ipField;
+    [SerializeField] private NetworkDiscovery networkDiscovery;
 
     private void Start()
     {
@@ -31,6 +33,16 @@ public class NetworkShortcuts : MonoBehaviour
     public void StartServer()
     {
         NetworkManager.singleton.StartServer();
+    }
+
+    public void StartAndOpenForPublic()
+    {
+        if (networkDiscovery != null)
+        {
+            //networkDiscoveryHUD.discoveredServers.Clear();
+            NetworkManager.singleton.StartHost();
+            networkDiscovery.AdvertiseServer();
+        }
     }
 
     public void StartHost()
