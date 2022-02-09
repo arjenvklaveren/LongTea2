@@ -19,7 +19,7 @@ public class SimpleShipMovement : NetworkBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (isLocalPlayer)
+        if (isLocalPlayer || NetworkManager.singleton == null)
         {
             float horizontal = Input.GetAxis("Horizontal");
             float vertical = Input.GetAxis("Vertical");
