@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Game - Singleplayer.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Scenes/LIAM - Game - Singleplayer.unity
+    guid: 9aabd04b0352c854796e3133398156fc
   m_configObjects: {}
