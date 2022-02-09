@@ -2801,6 +2801,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2034292223, guid: 954f12aaa1c53444e812ca725b904adf, type: 3}
+      propertyPath: serverBroadcastListenPort
+      value: 47777
+      objectReference: {fileID: 0}
+    - target: {fileID: 2034292223, guid: 954f12aaa1c53444e812ca725b904adf, type: 3}
       propertyPath: OnServerFound.m_PersistentCalls.m_Calls.Array.size
       value: 2
       objectReference: {fileID: 0}
