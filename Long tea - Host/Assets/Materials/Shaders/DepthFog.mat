@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Scrolling Lines
-  m_Shader: {fileID: 4800000, guid: 2d09becc0566de64fad1eebc64975ebd, type: 3}
+  m_Name: DepthFog
+  m_Shader: {fileID: 4800000, guid: 255010443b71116409647bc77e38a986, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -21,10 +21,7 @@ Material:
     m_TexEnvs: []
     m_Ints: []
     m_Floats:
-    - _lineWidth: 24
-    - _rotationAngle: 5
-    - _scrollSpeed: 0.6
+    - _IntersectionThresholdMax: 0.09
     m_Colors:
-    - _highStripeTint: {r: 0.27735847, g: 0.8774651, b: 1, a: 1}
-    - _lowStripeTint: {r: 0.107547104, g: 0.83550864, b: 1, a: 1}
+    - _Color: {r: 0.33333334, g: 0.8313726, b: 0.98823535, a: 1}
   m_BuildTextureStacks: []
