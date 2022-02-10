@@ -2,11 +2,13 @@ using Mirror;
 using UnityEngine;
 using TMPro;
 using Mirror.Discovery;
+using Mirror;
 
 public class NetworkShortcuts : MonoBehaviour
 {
     [SerializeField] private TMP_InputField ipField;
     [SerializeField] private NetworkDiscovery networkDiscovery;
+    [SerializeField] private NetworkRoomManager networkRoomManager;
 
     private void Start()
     {
@@ -43,6 +45,16 @@ public class NetworkShortcuts : MonoBehaviour
             NetworkManager.singleton.StartHost();
             networkDiscovery.AdvertiseServer();
         }
+    }
+
+    public void StartGame()
+    {
+        if(networkRoomManager == null)
+        {
+            networkRoomManager = (NetworkRoomManager)NetworkRoomManager.singleton;
+        }
+
+        networkRoomManager.OnRoomServerPlayersReady();
     }
 
     public void StartHost()
