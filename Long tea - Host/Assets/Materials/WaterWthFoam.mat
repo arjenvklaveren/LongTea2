@@ -48,10 +48,10 @@ Material:
     - _QueueOffset: 0
     - _Smoothness: 1
     m_Colors:
-    - Color_2604bd44a72643d7a0f79aee745da5bd: {r: 0, g: 1, b: 0.92280126, a: 0}
+    - Color_2604bd44a72643d7a0f79aee745da5bd: {r: 0, g: 1.319508, b: 0.9873546, a: 0.8745098}
     - Color_46f639a3c5714e66b4491178e8a40142: {r: 1, g: 1, b: 1, a: 1}
-    - Color_6ab995d4f9434c3cb26a57994a35b179: {r: 0.23137254, g: 0.882353, b: 0.99607843,
-        a: 0}
+    - Color_6ab995d4f9434c3cb26a57994a35b179: {r: 0.059807703, g: 0.8445161, b: 0.990566,
+        a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &8352778691959528496
 MonoBehaviour:
