@@ -506,7 +506,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7777778, y: 1}
+    m_SensorSize: {x: 1.3333334, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -1406,7 +1406,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7777778, y: 1}
+    m_SensorSize: {x: 1.3333334, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -2167,5 +2167,35 @@ PrefabInstance:
       propertyPath: shootPOVCamera
       value: 
       objectReference: {fileID: 1408192063}
+    - target: {fileID: 6319808670634518447, guid: 92de566991d76bc43858369cd6878c44,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 01529eaffbfba2b4fa0629cfe861746e, type: 3}
+    - target: {fileID: 6319808670823141545, guid: 92de566991d76bc43858369cd6878c44,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 01529eaffbfba2b4fa0629cfe861746e, type: 3}
+    - target: {fileID: 6319808671457916102, guid: 92de566991d76bc43858369cd6878c44,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 01529eaffbfba2b4fa0629cfe861746e, type: 3}
+    - target: {fileID: 6319808671558762867, guid: 92de566991d76bc43858369cd6878c44,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 01529eaffbfba2b4fa0629cfe861746e, type: 3}
+    - target: {fileID: 6319808672103764393, guid: 92de566991d76bc43858369cd6878c44,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 01529eaffbfba2b4fa0629cfe861746e, type: 3}
+    - target: {fileID: 8742575010904248022, guid: 92de566991d76bc43858369cd6878c44,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 01529eaffbfba2b4fa0629cfe861746e, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 92de566991d76bc43858369cd6878c44, type: 3}
