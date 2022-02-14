@@ -2,7 +2,6 @@ using Mirror;
 using UnityEngine;
 using TMPro;
 using Mirror.Discovery;
-using Mirror;
 
 public class NetworkShortcuts : MonoBehaviour
 {

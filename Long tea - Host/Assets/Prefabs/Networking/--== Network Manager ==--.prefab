@@ -9,7 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5081631546137585486}
-  - component: {fileID: 4077133073632489879}
+  - component: {fileID: 3613236710445110320}
+  - component: {fileID: 7886938416111366397}
   - component: {fileID: 5081631546137585485}
   - component: {fileID: 2034292223}
   - component: {fileID: 2034292222}
@@ -35,7 +36,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4077133073632489879
+--- !u!114 &3613236710445110320
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -44,7 +45,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5081631546137585481}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 615e6c6589cf9e54cad646b5a11e0529, type: 3}
+  m_Script: {fileID: 11500000, guid: 0e4e77e605007f44ebb6d05afb2682c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   dontDestroyOnLoad: 1
@@ -53,25 +54,57 @@ MonoBehaviour:
   serverTickRate: 30
   offlineScene: Assets/Scenes/Lobby - Client.unity
   onlineScene: Assets/Scenes/Lobby - Room.unity
-  transport: {fileID: 5081631546137585485}
+  transport: {fileID: 7886938416111366397}
   networkAddress: localhost
   maxConnections: 100
   authenticator: {fileID: 0}
   playerPrefab: {fileID: 3303805977472633941, guid: 2eb3aebc2023e294689f9daf12b46049,
     type: 3}
   autoCreatePlayer: 1
-  playerSpawnMethod: 0
+  playerSpawnMethod: 1
   spawnPrefabs:
   - {fileID: 161855267053302966, guid: 37d72fade4bed384c87ddf7ad4f6ae35, type: 3}
   showRoomGUI: 1
-  minPlayers: 9
-  roomPlayerPrefab: {fileID: 5386452290752036196, guid: bdea314f33bacbb4c901ba808c2e01a8,
+  minPlayers: 1
+  roomPlayerPrefab: {fileID: -8078986351075251121, guid: bdea314f33bacbb4c901ba808c2e01a8,
     type: 3}
   RoomScene: Assets/Scenes/Lobby - Room.unity
   GameplayScene: Assets/Scenes/Game - Networked.unity
   _allPlayersReady: 0
   roomSlots: []
   clientIndex: 0
+  UIPrefab: {fileID: 4013427477008655323, guid: 90a639da7eb5c7a4299ef65c4207a5a3,
+    type: 3}
+  playerListTransformName: Playerlist
+--- !u!114 &7886938416111366397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5081631546137585481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b0fecffa3f624585964b0d0eb21b18e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Port: 7777
+  DualMode: 1
+  NoDelay: 1
+  Interval: 10
+  Timeout: 10000
+  FastResend: 2
+  CongestionWindow: 0
+  SendWindowSize: 4096
+  ReceiveWindowSize: 4096
+  MaxRetransmit: 40
+  NonAlloc: 1
+  MaximizeSendReceiveBuffersToOSLimit: 1
+  ReliableMaxMessageSize: 298449
+  UnreliableMaxMessageSize: 1199
+  debugLog: 0
+  statisticsGUI: 0
+  statisticsLog: 0
 --- !u!114 &5081631546137585485
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -112,7 +145,7 @@ MonoBehaviour:
   serverBroadcastListenPort: 47777
   enableActiveDiscovery: 1
   ActiveDiscoveryInterval: 3
-  transport: {fileID: 5081631546137585485}
+  transport: {fileID: 7886938416111366397}
   OnServerFound:
     m_PersistentCalls:
       m_Calls:
