@@ -5,35 +5,58 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class ShipGyroControls : MonoBehaviour
 {
-    Gyroscope gyro;
-    Vector3 rotation;
     Rigidbody rb;
 
-    [SerializeField] private float moveSensitivity = 3f;
+    [SerializeField] private float accelerationSensitify = 3f;
     [SerializeField] private float steerSensitivity = 2;
-    [SerializeField] private float steerDeadzone = 20;
+    [Range(0.01f, 0.2f), SerializeField] private float steerDeadzone;
+    [Range(1,10), SerializeField] float minimumSpeed;
+    [Range(10,20), SerializeField] float maximumSpeed;
+
+    private float moveAcceleration;
 
     void Start()
     {
-        gyro = Input.gyro;
-        gyro.enabled = true;
+        moveAcceleration = minimumSpeed;
         rb = GetComponent<Rigidbody>();
+        Input.gyro.enabled = true;
     }
 
     void FixedUpdate()
     {
-        ControlShip();
+        RotateShip();
+        MoveShip();
     }
 
-    void ControlShip()
+    void RotateShip()
     {
-        rotation = gyro.attitude.eulerAngles;
-        float zRot = rotation.z;
-        float yRot = rotation.y;
-        //Debug.Log(System.Math.Round(rotation.x, 2) + " " + System.Math.Round(rotation.y, 2) + " " + System.Math.Round(rotation.z, 2));
-        Debug.Log(System.Math.Round(rotation.y, 2));
-        if (zRot < 90) zRot = 360;
-        transform.eulerAngles += (new Vector3(0, -(zRot - 260), 0) / 100) * steerSensitivity;
-        rb.AddForce(transform.forward * (moveSensitivity * 50) * Time.fixedDeltaTime);
+        float steerAcceleration = Mathf.Abs(Input.acceleration.x) * steerSensitivity;
+        if (Input.acceleration.x > steerDeadzone)
+        {
+            rb.MoveRotation(rb.rotation * Quaternion.Euler((new Vector3(0, 10, 0) / 100) * steerAcceleration));
+        }
+        else if (Input.acceleration.x < -steerDeadzone)
+        {
+            rb.MoveRotation(rb.rotation * Quaternion.Euler((new Vector3(0, -10, 0) / 100) * steerAcceleration));
+        }    
+    }
+
+    void MoveShip()
+    {
+        if (Input.acceleration.z > -1 && Input.acceleration.z < 0)
+        {
+            if (moveAcceleration < maximumSpeed)
+            {
+                moveAcceleration += (accelerationSensitify / 100);
+            }
+        }
+        else
+        {
+            if(moveAcceleration > minimumSpeed)
+            {
+                moveAcceleration -= (accelerationSensitify / 50);
+            }
+        }
+        rb.AddForce(transform.forward * (moveAcceleration * 50) * Time.fixedDeltaTime);
     }
 }

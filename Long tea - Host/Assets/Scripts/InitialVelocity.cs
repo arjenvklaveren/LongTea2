@@ -5,7 +5,7 @@ using UnityEngine;
 public class InitialVelocity : MonoBehaviour
 {
     [SerializeField] private Rigidbody rb;
-    [SerializeField] private Vector3 initialVelocity = Vector3.forward;
+    [SerializeField] private Vector3 initialVelocity;
     // Start is called before the first frame update
     void Start()
     {
