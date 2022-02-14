@@ -8,10 +8,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Lobby - Client.unity
     guid: c5d89e5231fb7fc4aabe98e44ac56f3b
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Lobby - Room.unity
     guid: 5256696a4f660ee4fa14e8d446facf13
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Lobby - Host.unity
     guid: 10d1a86378d353b4981148426684492a
   - enabled: 0
