@@ -5,22 +5,25 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/Lobby - Client.unity
-    guid: c5d89e5231fb7fc4aabe98e44ac56f3b
-  - enabled: 0
-    path: Assets/Scenes/Lobby - Room.unity
-    guid: 5256696a4f660ee4fa14e8d446facf13
-  - enabled: 0
-    path: Assets/Scenes/Lobby - Host.unity
-    guid: 10d1a86378d353b4981148426684492a
-  - enabled: 0
-    path: Assets/Scenes/Game - Networked.unity
-    guid: ef8123f14dbe62749930510b006e3e0a
   - enabled: 1
     path: Assets/Scenes/Game - Singleplayer.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 0
-    path: Assets/Scenes/LIAM - Game - Singleplayer.unity
-    guid: 9aabd04b0352c854796e3133398156fc
+    path: Assets/Scenes/Game - Networked.unity
+    guid: ef8123f14dbe62749930510b006e3e0a
+  - enabled: 0
+    path: Assets/Scenes/Lobby - Client.unity
+    guid: c5d89e5231fb7fc4aabe98e44ac56f3b
+  - enabled: 0
+    path: Assets/Scenes/Lobby - Host.unity
+    guid: 10d1a86378d353b4981148426684492a
+  - enabled: 0
+    path: Assets/Scenes/Lobby - Room.unity
+    guid: 5256696a4f660ee4fa14e8d446facf13
+  - enabled: 0
+    path: Assets/Scenes/Test.unity
+    guid: 178b12f901691714e9ecd9b53173e2cc
+  - enabled: 0
+    path: Assets/Scenes/LIAM_-_Game_-_Singleplayer.unity
+    guid: 522aa7287971341409e35b1e6ce3baa8
   m_configObjects: {}
