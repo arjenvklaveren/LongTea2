@@ -20,8 +20,6 @@ public class ShipGyroControls : MonoBehaviour
         moveAcceleration = minimumSpeed;
         rb = GetComponent<Rigidbody>();
         Input.gyro.enabled = true;
-
-        Application.targetFrameRate = 60;
     }
 
     void FixedUpdate()

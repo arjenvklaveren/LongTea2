@@ -142,8 +142,8 @@ GameObject:
   - component: {fileID: 4199188160139903658}
   - component: {fileID: 7731034711899919729}
   - component: {fileID: 3824829357820628268}
-  - component: {fileID: 5397741635079551184}
   - component: {fileID: 4628368722560865968}
+  - component: {fileID: 2531155895651036939}
   m_Layer: 0
   m_Name: Player - Networked
   m_TagString: Untagged
@@ -267,7 +267,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncMode: 0
   syncInterval: 0.1
---- !u!114 &5397741635079551184
+--- !u!114 &4628368722560865968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3303805977472633941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b848bcf37111e9f47b91a724279ef85c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
+  objectToSpawn: {fileID: 161855267053302966, guid: 37d72fade4bed384c87ddf7ad4f6ae35,
+    type: 3}
+  spawnTransform: {fileID: 6136177121914823345}
+--- !u!114 &2531155895651036939
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -297,23 +314,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &4628368722560865968
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3303805977472633941}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b848bcf37111e9f47b91a724279ef85c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  syncMode: 0
-  syncInterval: 0.1
-  objectToSpawn: {fileID: 161855267053302966, guid: 37d72fade4bed384c87ddf7ad4f6ae35,
-    type: 3}
-  spawnTransform: {fileID: 6136177121914823345}
 --- !u!1 &3303805977895986676
 GameObject:
   m_ObjectHideFlags: 0
