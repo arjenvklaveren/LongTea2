@@ -36,12 +36,20 @@ public class NetworkShortcuts : MonoBehaviour
         NetworkManager.singleton.StartServer();
     }
 
-    public void StartAndOpenForPublic()
+    public void StartHostAndOpenForPublic()
     {
         if (networkDiscovery != null)
         {
-            //networkDiscoveryHUD.discoveredServers.Clear();
             NetworkManager.singleton.StartHost();
+            networkDiscovery.AdvertiseServer();
+        }
+    }
+
+    public void StartServerAndOpenForPublic()
+    {
+        if (networkDiscovery != null)
+        {
+            NetworkManager.singleton.StartServer();
             networkDiscovery.AdvertiseServer();
         }
     }

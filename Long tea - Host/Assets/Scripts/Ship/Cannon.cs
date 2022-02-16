@@ -6,7 +6,6 @@ public class Cannon : MonoBehaviour
 {
     public Transform barrelTip;
     public Transform barrelPivot;
-    public bool isPositionedOnRightSideOfShip;
     public AudioSource shootSound;
 
     public void Shoot(GameObject cannonBall, float shotPower)

@@ -9,8 +9,10 @@ public class ShipShooting : MonoBehaviour
     [SerializeField] private int shootPower;
     [SerializeField] private float shootCooldown;
     [SerializeField] private float barrelMaxRotation;
+    [Range(0.1f, 2), SerializeField] private float barrelRotateDeadzone;
 
-    [SerializeField] private GameObject cannonHolderParent;
+    [SerializeField] private GameObject leftCannonsHolder;
+    [SerializeField] private GameObject rightCannonsHolder;
     [SerializeField] private GameObject cannonBall;
 
     [SerializeField] private CinemachineVirtualCamera shootPOVCamera;
@@ -20,17 +22,11 @@ public class ShipShooting : MonoBehaviour
     [Range(10, 100), SerializeField] private int predictionPointAmount;
     [Range(0.01f,1), SerializeField] private float predictionSmoothness;
 
+    private bool canShoot = true;
     private bool isAiming;
-    private List<Cannon> cannons = new List<Cannon>();
-    [SerializeField]  private List<Cannon> selectedCannons = new List<Cannon>();
+    private List<Cannon> selectedCannons = new List<Cannon>();
+    float prevRot = 0;
 
-    void Start()
-    {
-        foreach (Transform cannon in cannonHolderParent.transform)
-        {
-            cannons.Add(cannon.GetComponent<Cannon>());
-        }
-    }
     private void Update()
     {
         DetectTouch();
@@ -38,7 +34,9 @@ public class ShipShooting : MonoBehaviour
 
     void DetectTouch()
     {
-        if (Input.touchCount > 0)
+        Debug.Log(Input.touchCount);
+        //Aiming
+        if (Input.touchCount == 1)
         {
             var touch = Input.touches[0];
             shootPOVCamera.Priority = 15;
@@ -46,25 +44,30 @@ public class ShipShooting : MonoBehaviour
             //Touched on right side
             if (touch.position.x > Screen.width/2)
             {
-                SetupPOVShooting(90, true);
+                SetupPOVShooting(90, rightCannonsHolder);
             }
             //Touched on left side
             else if(touch.position.x < Screen.width / 2)
             {
-                SetupPOVShooting(-90, false);
+                SetupPOVShooting(-90, leftCannonsHolder);
             }
 
             IsAiming();        
         }
 
-        //Not aiming anymore
-        else if(Input.touchCount == 0 && isAiming)
+        //Not aiming anymore, so shooting if able
+        else if(Input.touchCount != 1 && isAiming)
         {
-            shootPOVCamera.Priority = 5;
-            foreach (Cannon cannon in selectedCannons)
+            if (canShoot)
             {
-                StartCoroutine(ShootCannons(cannon));
+                foreach (Cannon cannon in selectedCannons)
+                {
+                    StartCoroutine(ShootCannons(cannon));
+                }          
+                canShoot = false;
+                StartCoroutine(ShootingCooldown());
             }
+            shootPOVCamera.Priority = 5;                 
             predictionRenderer1.positionCount = 0;
             predictionRenderer2.positionCount = 0;
             selectedCannons.Clear();
@@ -72,46 +75,35 @@ public class ShipShooting : MonoBehaviour
         }
     }
 
-    void SetupPOVShooting(int cameraAngle, bool isRight)
+    void SetupPOVShooting(int cameraAngle, GameObject cannonParent)
     {
         shootPOVCamera.transform.eulerAngles = new Vector3(0, cameraAngle + transform.localEulerAngles.y, 0);
-        if (!isAiming)
-        {         
-            foreach (Cannon cannon in cannons)
+        if(!isAiming)
+        {
+            foreach (Transform cannon in cannonParent.transform)
             {
-                if (isRight)
-                {
-                    if (cannon.isPositionedOnRightSideOfShip)
-                    {
-                        selectedCannons.Add(cannon);
-                    }
-                }
-                if(!isRight)
-                {
-                    if (!cannon.isPositionedOnRightSideOfShip)
-                    {
-                        selectedCannons.Add(cannon);
-                    }
-                }
+                selectedCannons.Add(cannon.GetComponent<Cannon>());
             }
-        }
+        }       
     }
 
     void IsAiming()
     {
         isAiming = true;
         DrawShootingPrediction();
-        foreach (Cannon cannon in selectedCannons)
-        {
-            RotateBarrels(cannon);
-        }
-    }
 
-    void RotateBarrels(Cannon cannon)
-    {
-        if (Input.acceleration.z + 1 < 1 && Input.acceleration.z + 1 > 0)
+        float rotateAngle = (Input.acceleration.z + 1) * barrelMaxRotation;
+        if (rotateAngle > 45) rotateAngle = 45;
+        else if (rotateAngle < 0) rotateAngle = 0;
+
+        if (rotateAngle > prevRot + barrelRotateDeadzone || rotateAngle < prevRot - barrelRotateDeadzone)
         {
-            cannon.barrelPivot.transform.localEulerAngles = new Vector3(-((Input.acceleration.z + 1) * barrelMaxRotation), 0, 0);
+            foreach (Cannon cannon in selectedCannons)
+            {
+                Quaternion quatTargetRot = Quaternion.Euler(new Vector3(-rotateAngle, 0, 0));
+                cannon.barrelPivot.transform.localRotation = Quaternion.Lerp(cannon.barrelPivot.transform.localRotation, quatTargetRot, 0.1f * Time.deltaTime * 100);
+            }
+            prevRot = rotateAngle;
         }
     }
 
@@ -139,6 +131,20 @@ public class ShipShooting : MonoBehaviour
 
         predictionRenderer1.SetPositions(points.ToArray());
         predictionRenderer2.SetPositions(points.ToArray());
+    }
+
+    IEnumerator ShootingCooldown()
+    {
+        predictionRenderer1.startColor = new Color(255, 0, 0);
+        predictionRenderer1.endColor = new Color(255, 0, 0);
+        predictionRenderer2.startColor = new Color(255, 0, 0);
+        predictionRenderer2.endColor = new Color(255, 0, 0);
+        yield return new WaitForSeconds(shootCooldown);
+        canShoot = true;
+        predictionRenderer1.startColor = new Color(255, 255, 255);
+        predictionRenderer1.endColor = new Color(255, 255, 255);
+        predictionRenderer2.startColor = new Color(255, 255, 255);
+        predictionRenderer2.endColor = new Color(255, 255, 255);
     }
 
     IEnumerator ShootCannons(Cannon cannon)

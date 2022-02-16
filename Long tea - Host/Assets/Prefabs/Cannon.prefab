@@ -164,7 +164,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   barrelTip: {fileID: 2304207234445139276}
   barrelPivot: {fileID: 3379851628381761981}
-  isPositionedOnRightSideOfShip: 0
   shootSound: {fileID: -9109639136408182906}
 --- !u!82 &-9109639136408182906
 AudioSource:
