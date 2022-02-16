@@ -7,7 +7,7 @@ public class ShipGyroControls : MonoBehaviour
 {
     Rigidbody rb;
 
-    [SerializeField] private float accelerationSensitify = 3f;
+    [SerializeField] private float accelerationRate = 3f;
     [SerializeField] private float steerSensitivity = 2;
     [Range(0.01f, 0.2f), SerializeField] private float steerDeadzone;
     [Range(1,10), SerializeField] float minimumSpeed;
@@ -47,14 +47,14 @@ public class ShipGyroControls : MonoBehaviour
         {
             if (moveAcceleration < maximumSpeed)
             {
-                moveAcceleration += (accelerationSensitify / 100);
+                moveAcceleration += (accelerationRate / 100);
             }
         }
         else
         {
             if(moveAcceleration > minimumSpeed)
             {
-                moveAcceleration -= (accelerationSensitify / 50);
+                moveAcceleration -= (accelerationRate / 50);
             }
         }
         rb.AddForce(transform.forward * (moveAcceleration * 50) * Time.fixedDeltaTime);

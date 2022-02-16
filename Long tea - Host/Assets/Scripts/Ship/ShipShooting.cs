@@ -20,6 +20,8 @@ public class ShipShooting : MonoBehaviour
     [Range(10, 100), SerializeField] private int predictionPointAmount;
     [Range(0.01f,1), SerializeField] private float predictionSmoothness;
 
+    private bool canShoot = true;
+
     private bool isAiming;
     private List<Cannon> cannons = new List<Cannon>();
     [SerializeField]  private List<Cannon> selectedCannons = new List<Cannon>();
@@ -38,7 +40,9 @@ public class ShipShooting : MonoBehaviour
 
     void DetectTouch()
     {
-        if (Input.touchCount > 0)
+        Debug.Log(Input.touchCount);
+        //Aiming
+        if (Input.touchCount == 1)
         {
             var touch = Input.touches[0];
             shootPOVCamera.Priority = 15;
@@ -57,14 +61,19 @@ public class ShipShooting : MonoBehaviour
             IsAiming();        
         }
 
-        //Not aiming anymore
-        else if(Input.touchCount == 0 && isAiming)
+        //Not aiming anymore, so shooting if able
+        else if(Input.touchCount != 1 && isAiming)
         {
-            shootPOVCamera.Priority = 5;
-            foreach (Cannon cannon in selectedCannons)
+            if (canShoot)
             {
-                StartCoroutine(ShootCannons(cannon));
+                foreach (Cannon cannon in selectedCannons)
+                {
+                    StartCoroutine(ShootCannons(cannon));
+                }          
+                canShoot = false;
+                StartCoroutine(ShootingCooldown());
             }
+            shootPOVCamera.Priority = 5;                 
             predictionRenderer1.positionCount = 0;
             predictionRenderer2.positionCount = 0;
             selectedCannons.Clear();
@@ -76,7 +85,7 @@ public class ShipShooting : MonoBehaviour
     {
         shootPOVCamera.transform.eulerAngles = new Vector3(0, cameraAngle + transform.localEulerAngles.y, 0);
         if (!isAiming)
-        {         
+        {
             foreach (Cannon cannon in cannons)
             {
                 if (isRight)
@@ -139,6 +148,20 @@ public class ShipShooting : MonoBehaviour
 
         predictionRenderer1.SetPositions(points.ToArray());
         predictionRenderer2.SetPositions(points.ToArray());
+    }
+
+    IEnumerator ShootingCooldown()
+    {
+        predictionRenderer1.startColor = new Color(255, 0, 0);
+        predictionRenderer1.endColor = new Color(255, 0, 0);
+        predictionRenderer2.startColor = new Color(255, 0, 0);
+        predictionRenderer2.endColor = new Color(255, 0, 0);
+        yield return new WaitForSeconds(shootCooldown);
+        canShoot = true;
+        predictionRenderer1.startColor = new Color(255, 255, 255);
+        predictionRenderer1.endColor = new Color(255, 255, 255);
+        predictionRenderer2.startColor = new Color(255, 255, 255);
+        predictionRenderer2.endColor = new Color(255, 255, 255);
     }
 
     IEnumerator ShootCannons(Cannon cannon)

@@ -24,6 +24,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Test.unity
     guid: 178b12f901691714e9ecd9b53173e2cc
   - enabled: 0
-    path: Assets/Scenes/LIAM_-_Game_-_Singleplayer.unity
-    guid: 522aa7287971341409e35b1e6ce3baa8
+    path: 
+    guid: 00000000000000000000000000000000
   m_configObjects: {}
