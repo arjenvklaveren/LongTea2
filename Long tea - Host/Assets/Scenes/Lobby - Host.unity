@@ -885,7 +885,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2108833918}
         m_TargetAssemblyTypeName: NetworkShortcuts, Assembly-CSharp
-        m_MethodName: StartHost
+        m_MethodName: StartServerAndOpenForPublic
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1264,8 +1264,7 @@ Transform:
   m_LocalPosition: {x: -9.336872, y: -24.541245, z: -4.3049088}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1552499334}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1279,6 +1278,11 @@ PrefabInstance:
     - target: {fileID: 2034292223, guid: 954f12aaa1c53444e812ca725b904adf, type: 3}
       propertyPath: OnServerFound.m_PersistentCalls.m_Calls.Array.size
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3613236710445110320, guid: 954f12aaa1c53444e812ca725b904adf,
+        type: 3}
+      propertyPath: showRoomGUI
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4077133073632489879, guid: 954f12aaa1c53444e812ca725b904adf,
         type: 3}
