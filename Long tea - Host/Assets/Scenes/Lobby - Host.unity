@@ -124,6 +124,30 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &24863508 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2034292223, guid: 954f12aaa1c53444e812ca725b904adf,
+    type: 3}
+  m_PrefabInstance: {fileID: 2100413924}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c761308e733c51245b2e8bb4201f46dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &24863511 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3613236710445110320, guid: 954f12aaa1c53444e812ca725b904adf,
+    type: 3}
+  m_PrefabInstance: {fileID: 2100413924}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e4e77e605007f44ebb6d05afb2682c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &349337820
 GameObject:
   m_ObjectHideFlags: 0
@@ -1275,6 +1299,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2034292222, guid: 954f12aaa1c53444e812ca725b904adf, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2034292223, guid: 954f12aaa1c53444e812ca725b904adf, type: 3}
       propertyPath: OnServerFound.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -1471,8 +1499,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ipField: {fileID: 0}
-  networkDiscovery: {fileID: 0}
-  networkRoomManager: {fileID: 0}
+  networkDiscovery: {fileID: 24863508}
+  networkRoomManager: {fileID: 24863511}
 --- !u!1 &2120837574
 GameObject:
   m_ObjectHideFlags: 0
