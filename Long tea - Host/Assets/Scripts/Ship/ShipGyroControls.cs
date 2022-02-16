@@ -57,6 +57,6 @@ public class ShipGyroControls : MonoBehaviour
                 moveAcceleration -= (accelerationRate / 50);
             }
         }
-        rb.AddForce(transform.forward * (moveAcceleration * 50) * Time.fixedDeltaTime);
+        rb.AddForce(transform.forward * (moveAcceleration * 5000) * Time.fixedDeltaTime);
     }
 }
