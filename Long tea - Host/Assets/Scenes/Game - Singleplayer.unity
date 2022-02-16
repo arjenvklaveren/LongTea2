@@ -99,7 +99,7 @@ LightmapSettings:
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 112000000, guid: c0b366ac7b8f4874a9918e02007a1e6b,
     type: 2}
-  m_LightingSettings: {fileID: 306902680}
+  m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -244,7 +244,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1870162257}
-  m_RootOrder: 9
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &371828254
 MeshRenderer:
@@ -327,7 +327,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1870162257}
-  m_RootOrder: 6
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &375921970
 MeshRenderer:
@@ -1291,7 +1291,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1870162257}
-  m_RootOrder: 8
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &1361805738
 MeshRenderer:
@@ -1558,7 +1558,6 @@ Transform:
   m_Children:
   - {fileID: 1050675865}
   - {fileID: 1258080534}
-  - {fileID: 1510478129}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1661,10 +1660,7 @@ Transform:
   - {fileID: 848216419}
   - {fileID: 355438477}
   - {fileID: 1435128995}
-  - {fileID: 1552620640}
-  - {fileID: 215457146}
   - {fileID: 375921969}
-  - {fileID: 62414125}
   - {fileID: 1361805737}
   - {fileID: 371828253}
   - {fileID: 2105883255}
@@ -2289,7 +2285,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1870162257}
-  m_RootOrder: 10
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &6206092196538166112
 PrefabInstance:
