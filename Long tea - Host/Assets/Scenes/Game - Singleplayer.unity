@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1050675867}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.46169513, g: 0.5124164, b: 0.58993304, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -829,6 +829,45 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!1 &1086041952 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 608482359388194643, guid: dc4b6fc8f141e31488996e30e301f91d,
+    type: 3}
+  m_PrefabInstance: {fileID: 2131310685}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1086041960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1086041952}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ed3849b60dd3fb4cbf8eb2f3a819e3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
+  cannonBallPrefab: {fileID: 161855267053302966, guid: c21b9f5d5005e924ca7387e83c0bbf64,
+    type: 3}
+--- !u!114 &1086041961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1086041952}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 893256208
+  serverOnly: 0
+  visible: 0
+  m_AssetId: dc4b6fc8f141e31488996e30e301f91d
+  hasSpawned: 0
 --- !u!1 &1180156905
 GameObject:
   m_ObjectHideFlags: 0
@@ -1298,8 +1337,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1964602097}
-  m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -28.162, y: 3.86, z: -46.34}
+  m_LocalRotation: {x: 0.50098187, y: -0, z: -0, w: 0.86545783}
+  m_LocalPosition: {x: -28.265892, y: 43.1, z: -69.32}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1404,9 +1443,9 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.5
+  near clip plane: 0.1
   far clip plane: 5000
-  field of view: 75
+  field of view: 60.000004
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
@@ -1591,7 +1630,7 @@ PrefabInstance:
     - target: {fileID: 6206092196286703190, guid: 92de566991d76bc43858369cd6878c44,
         type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 6206092196286703190, guid: 92de566991d76bc43858369cd6878c44,
         type: 3}
@@ -1723,6 +1762,11 @@ PrefabInstance:
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: 01529eaffbfba2b4fa0629cfe861746e, type: 3}
+    - target: {fileID: 6903312537800439625, guid: 92de566991d76bc43858369cd6878c44,
+        type: 3}
+      propertyPath: sceneId
+      value: 2978990389
+      objectReference: {fileID: 0}
     - target: {fileID: 8742575010904248022, guid: 92de566991d76bc43858369cd6878c44,
         type: 3}
       propertyPath: m_audioClip
@@ -1761,6 +1805,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 221a2ec935a09cf4ab0ddc9c90185d3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
   health: 100
   OnHit:
     m_PersistentCalls:
@@ -1815,6 +1861,31 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4570177315962091343, guid: dc4b6fc8f141e31488996e30e301f91d,
+        type: 3}
+      propertyPath: shootCannonballReference
+      value: 
+      objectReference: {fileID: 1086041960}
+    - target: {fileID: 4570177316597946080, guid: dc4b6fc8f141e31488996e30e301f91d,
+        type: 3}
+      propertyPath: shootCannonballReference
+      value: 
+      objectReference: {fileID: 1086041960}
+    - target: {fileID: 4570177317043166993, guid: dc4b6fc8f141e31488996e30e301f91d,
+        type: 3}
+      propertyPath: shootCannonballReference
+      value: 
+      objectReference: {fileID: 1086041960}
+    - target: {fileID: 4570177317164866357, guid: dc4b6fc8f141e31488996e30e301f91d,
+        type: 3}
+      propertyPath: shootCannonballReference
+      value: 
+      objectReference: {fileID: 1086041960}
+    - target: {fileID: 4570177317333443880, guid: dc4b6fc8f141e31488996e30e301f91d,
+        type: 3}
+      propertyPath: shootCannonballReference
+      value: 
+      objectReference: {fileID: 1086041960}
     - target: {fileID: 7943433333500039574, guid: dc4b6fc8f141e31488996e30e301f91d,
         type: 3}
       propertyPath: m_RootOrder
@@ -1870,7 +1941,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 9187110491232074545, guid: dc4b6fc8f141e31488996e30e301f91d,
+        type: 3}
+      propertyPath: shootCannonballReference
+      value: 
+      objectReference: {fileID: 1086041960}
+    m_RemovedComponents:
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: dc4b6fc8f141e31488996e30e301f91d, type: 3}
 --- !u!1001 &2702476095919159165
 PrefabInstance:
@@ -1892,7 +1969,7 @@ PrefabInstance:
     - target: {fileID: 7943433333500039574, guid: dc4b6fc8f141e31488996e30e301f91d,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7943433333500039574, guid: dc4b6fc8f141e31488996e30e301f91d,
         type: 3}
@@ -1967,7 +2044,7 @@ PrefabInstance:
     - target: {fileID: 6206092196286703189, guid: 92de566991d76bc43858369cd6878c44,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6206092196286703190, guid: 92de566991d76bc43858369cd6878c44,
         type: 3}
@@ -2029,5 +2106,10 @@ PrefabInstance:
       propertyPath: shootPOVCamera
       value: 
       objectReference: {fileID: 1408192063}
+    - target: {fileID: 6903312537800439625, guid: 92de566991d76bc43858369cd6878c44,
+        type: 3}
+      propertyPath: sceneId
+      value: 631887435
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 92de566991d76bc43858369cd6878c44, type: 3}

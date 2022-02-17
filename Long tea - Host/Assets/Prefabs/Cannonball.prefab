@@ -171,7 +171,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: -4234810761957036689}
-  initialVelocity: {x: 0, y: 0, z: 15}
+  initialVelocity: {x: 0, y: 0, z: 35}
 --- !u!114 &-2414711662684625059
 MonoBehaviour:
   m_ObjectHideFlags: 0
