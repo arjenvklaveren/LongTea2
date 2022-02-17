@@ -2819,11 +2819,6 @@ PrefabInstance:
       propertyPath: OnServerFound.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 2108833919}
-    - target: {fileID: 3613236710445110320, guid: 954f12aaa1c53444e812ca725b904adf,
-        type: 3}
-      propertyPath: showRoomGUI
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4077133073632489879, guid: 954f12aaa1c53444e812ca725b904adf,
         type: 3}
       propertyPath: showRoomGUI
