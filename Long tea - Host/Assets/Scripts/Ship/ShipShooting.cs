@@ -113,7 +113,7 @@ public class ShipShooting : MonoBehaviour
         predictionRenderer2.positionCount = (int)predictionPointAmount;
 
         List<Vector3> points = new List<Vector3>();
-        Vector3 startingPosition = selectedCannons[1].barrelTip.position;
+        Vector3 startingPosition = selectedCannons[1].barrelPivot.position;
         Vector3 startingVelocity = selectedCannons[1].barrelTip.transform.forward * shootPower;
         for (float t = 0; t < predictionPointAmount; t += predictionSmoothness / 2)
         {
