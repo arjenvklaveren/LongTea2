@@ -150,6 +150,6 @@ public class ShipShooting : MonoBehaviour
     IEnumerator ShootCannons(Cannon cannon)
     {
         yield return new WaitForSeconds(Random.Range(0f, 0.25f));
-        cannon.Shoot(cannonBall, shootPower);       
+        cannon.Shoot();       
     }
 }

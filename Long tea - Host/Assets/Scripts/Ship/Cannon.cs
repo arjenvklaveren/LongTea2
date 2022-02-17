@@ -1,17 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
+using Mirror;
 
 public class Cannon : MonoBehaviour
 {
     public Transform barrelTip;
     public Transform barrelPivot;
     public AudioSource shootSound;
+    public ShootCannonball shootCannonballReference;
 
-    public void Shoot(GameObject cannonBall, float shotPower)
+    public void Shoot()
     {
-        GameObject cannonBallCopy = Instantiate(cannonBall, barrelTip.position, barrelPivot.rotation);
-        cannonBallCopy.GetComponent<Rigidbody>().AddForce(barrelPivot.transform.TransformDirection(new Vector3(0,0, shotPower)), ForceMode.VelocityChange);
         shootSound.Play();
+        shootCannonballReference.ShootBall(barrelTip.position, barrelPivot.rotation);
     }
 }

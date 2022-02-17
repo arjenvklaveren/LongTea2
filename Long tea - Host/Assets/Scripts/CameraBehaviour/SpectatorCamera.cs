@@ -16,6 +16,8 @@ public class SpectatorCamera : MonoBehaviour
         InvokeRepeating("UpdateInteresting", 5f, 2f);
     }
 
+
+    //TODO: Call this after any (other) player leaves
     public void FetchInterestingObjects()
     {
         GameObject[] interestingGameObjects = GameObject.FindGameObjectsWithTag("Player");
