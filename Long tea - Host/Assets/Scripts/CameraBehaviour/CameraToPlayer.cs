@@ -9,7 +9,7 @@ public class CameraToPlayer : NetworkBehaviour
     private CinemachineVirtualCamera cinemachineCamera;
     public override void OnStartLocalPlayer()
     {
-        cinemachineCamera = FindObjectOfType<CinemachineVirtualCamera>();
+        cinemachineCamera = GameObject.FindGameObjectWithTag("MasterCMCamera").GetComponent<CinemachineVirtualCamera>();
         cinemachineCamera.Follow = transform;
         cinemachineCamera.LookAt = transform;
     }

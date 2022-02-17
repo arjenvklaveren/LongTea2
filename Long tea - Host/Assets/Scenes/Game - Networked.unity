@@ -598,8 +598,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 311443527}
+  - component: {fileID: 311443529}
+  - component: {fileID: 311443528}
   m_Layer: 0
-  m_Name: --== Spawnpoints ==--
+  m_Name: --== Spawning ==--
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -628,6 +630,39 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &311443528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 311443526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b848bcf37111e9f47b91a724279ef85c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
+  objectToSpawn: {fileID: 0}
+  spawnTransform: {fileID: 0}
+--- !u!114 &311443529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 311443526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 3792764084
+  serverOnly: 0
+  visible: 0
+  m_AssetId: 
+  hasSpawned: 0
 --- !u!1 &339255502
 GameObject:
   m_ObjectHideFlags: 0
@@ -901,7 +936,7 @@ MonoBehaviour:
   m_PivotOffset: {x: 0, y: 0, z: 0}
   m_AmplitudeGain: 0.4
   m_FrequencyGain: 0.85
-  mNoiseOffsets: {x: 0, y: 0, z: 0}
+  mNoiseOffsets: {x: 36.13028, y: -700.2556, z: -483.94644}
 --- !u!1 &444142599
 GameObject:
   m_ObjectHideFlags: 0
@@ -1471,7 +1506,7 @@ GameObject:
   - component: {fileID: 608755952}
   m_Layer: 0
   m_Name: Cinemachine Camera
-  m_TagString: Untagged
+  m_TagString: MasterCMCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1521,7 +1556,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7773893, y: 1}
+    m_SensorSize: {x: 1.7777778, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -3204,6 +3239,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4f1eb8c940ba3e4eae3cb3099b5a4f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shipRelations: []
 --- !u!1 &1381394809
 GameObject:
   m_ObjectHideFlags: 0
