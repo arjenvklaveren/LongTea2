@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: -4234810761957036689}
   - component: {fileID: 9068625871673844469}
   - component: {fileID: 2604829747050183332}
+  - component: {fileID: -9018006867870486512}
   m_Layer: 0
   m_Name: CannonAmmo
   m_TagString: Untagged
@@ -142,3 +143,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 40
+--- !u!114 &-9018006867870486512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 161855267053302966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eec1e02d9d0b12044b1b85a5e6a407ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 0}
+  initialVelocity: {x: 0, y: 0, z: 35}
