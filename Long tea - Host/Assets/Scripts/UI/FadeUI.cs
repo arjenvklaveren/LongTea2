@@ -7,6 +7,7 @@ using DG.Tweening;
 public class FadeUI : MonoBehaviour
 {
     private CanvasGroup canvasGroup = null;
+    [SerializeField] private bool toggleInteractability = true;
 
     private void Start()
     {
@@ -17,10 +18,12 @@ public class FadeUI : MonoBehaviour
     public void FadeOut(float speed)
     {
         canvasGroup.DOFade(0f, speed).SetUpdate(true);
+        if(toggleInteractability) canvasGroup.interactable = false;
     }
 
     public void FadeIn(float speed)
     {
         canvasGroup.DOFade(1f, speed).SetUpdate(true);
+        if(toggleInteractability) canvasGroup.interactable = true;
     }
 }
