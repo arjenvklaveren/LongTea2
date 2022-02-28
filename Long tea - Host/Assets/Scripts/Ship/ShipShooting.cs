@@ -34,6 +34,7 @@ public class ShipShooting : MonoBehaviour
 
     void DetectTouch()
     {
+        Debug.Log(Input.touchCount);
         //Aiming
         if (Input.touchCount == 1)
         {

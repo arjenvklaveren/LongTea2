@@ -11,7 +11,7 @@ public class ShipGyroControls : MonoBehaviour
     [SerializeField] private float steerSensitivity = 2;
     [Range(0.01f, 0.2f), SerializeField] private float steerDeadzone;
     [Range(1,10), SerializeField] float minimumSpeed;
-    [Range(10,20), SerializeField] public float maximumSpeed;
+    [Range(10,20), SerializeField] float maximumSpeed;
 
     private float moveAcceleration;
 
