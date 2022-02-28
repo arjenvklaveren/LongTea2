@@ -24,8 +24,8 @@ public class SimpleShipMovement : NetworkBehaviour
             float horizontal = Input.GetAxis("Horizontal");
             float vertical = Input.GetAxis("Vertical");
 
-            rb.AddTorque(transform.up * horizontal * rotationSpeed * Time.fixedDeltaTime);
-            rb.AddForce(transform.forward * vertical * moveSpeed * Time.fixedDeltaTime);
+            rb.AddTorque(horizontal * rotationSpeed * transform.up);
+            rb.AddForce(moveSpeed * vertical * transform.forward);
         }
     }
 }

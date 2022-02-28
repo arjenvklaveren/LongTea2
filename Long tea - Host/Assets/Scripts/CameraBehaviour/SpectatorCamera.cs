@@ -37,6 +37,11 @@ public class SpectatorCamera : MonoBehaviour
 
         foreach (Transform potential in interestingObjects)
         {
+            if(potential == null)
+            {
+                FetchInterestingObjects();
+                return;
+            }
             shipRelations.Add(FindClosest(potential, new List<Transform>(interestingObjects)));
         }
 
