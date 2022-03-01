@@ -22,6 +22,7 @@ public class Ammo : NetworkBehaviour
         }
     }
 
+
     public void TryDealDamage(GameObject playerObject)
     {
         if (playerObject.TryGetComponent(out EntityHealth entityHealth))
