@@ -12,6 +12,11 @@ public class NetworkRoomManagerExt : NetworkRoomManager
     private Transform playerListTransform;
     private List<NetworkRoomPlayer> playersInRoom;
 
+    private void Start()
+    {
+        InvokeRepeating("TryUpdatePlayerUI", 0.1f, 1.5f);
+    }
+
     public override void OnServerConnect(NetworkConnection conn)
     {
         base.OnServerConnect(conn);
@@ -24,11 +29,9 @@ public class NetworkRoomManagerExt : NetworkRoomManager
         StartCoroutine(UpdateRoomPlayerList());
     }
 
-
     public override void OnClientConnect()
     {
         base.OnClientConnect();
-        InvokeRepeating("TryUpdatePlayerUI", 0.1f, 1.5f);
     }
 
 
