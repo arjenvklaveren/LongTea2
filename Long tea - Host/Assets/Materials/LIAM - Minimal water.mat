@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Minimal water
+  m_Name: LIAM - Minimal water
   m_Shader: {fileID: -6465566751694194690, guid: fe9200ddb279ccb43aa618f074f9b94f,
     type: 3}
   m_ShaderKeywords: 
@@ -48,7 +48,7 @@ Material:
     m_Ints: []
     m_Floats:
     - Vector1_041879269ebe4605a5d9c58650ef1417: 0.25
-    - Vector1_736859c728b14209a98a41d36e2212e0: 10
+    - Vector1_736859c728b14209a98a41d36e2212e0: 8
     - Vector1_7e029f11cd9849598db244ed595cd13e: 0.2
     - Vector1_98b950e8fadc45c88b4d9738708bdfcd: 0.5
     - Vector1_d84c11910f4546eb912a1c5f4c4ffd8d: 3
