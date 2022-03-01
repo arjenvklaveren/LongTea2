@@ -5,37 +5,37 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Game - Singleplayer.unity
     guid: 99c9720ab356a0642a771bea13969a05
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Lobby - Client.unity
     guid: c5d89e5231fb7fc4aabe98e44ac56f3b
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Lobby - Host.unity
     guid: 10d1a86378d353b4981148426684492a
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Lobby - Room.unity
     guid: 5256696a4f660ee4fa14e8d446facf13
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Game - Networked.unity
     guid: ef8123f14dbe62749930510b006e3e0a
   - enabled: 0
     path: Assets/Scenes/Test.unity
     guid: 178b12f901691714e9ecd9b53173e2cc
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/UI/Main Menu.unity
     guid: 164161a12ef65ba47882313a610626c5
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/UI/Settings.unity
     guid: 84e9f433444a2d64ab464e9ae6f3c1f0
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/UI/Player Naming.unity
     guid: 62f6689470dbed14a8bf6d9eb8b6c746
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/UI/Localhost.unity
     guid: f4d9f2d41b4e75348aebdb3c586f501e
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/UI/Find Server.unity
     guid: df37d1cd2b66a164ea321550dbb1edc3
   m_configObjects: {}
