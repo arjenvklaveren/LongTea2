@@ -61,13 +61,13 @@ public class NetworkRoomManagerExt : NetworkRoomManager
         playersInRoom = roomSlots;
         for (int i = 0; i < playersInRoom.Count; i++)
         {
-            CreatePlayerUIItem(playersInRoom[i]);
+            CreatePlayerUIItem((RoomPlayerUI)playersInRoom[i]);
         }
     }
 
-    private void CreatePlayerUIItem(NetworkRoomPlayer playerInfo)
+    private void CreatePlayerUIItem(RoomPlayerUI playerInfo)
     {
         GameObject playerUI = Instantiate(UIPrefab, playerListTransform);
-        playerUI.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = $"Player {playerInfo.index}";
+        playerUI.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = playerInfo.playerName;
     }
 }

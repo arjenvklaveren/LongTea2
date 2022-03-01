@@ -6,6 +6,12 @@ using Mirror;
 public class Ammo : NetworkBehaviour
 {
     public int damage;
+    NetworkRoomPlayer ammoOwner;
+
+    public void SetOwner()
+    {
+        
+    }
 
     private void OnCollisionEnter(Collision collision)
     {

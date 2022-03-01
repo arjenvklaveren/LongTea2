@@ -21,8 +21,8 @@ Material:
     m_TexEnvs: []
     m_Ints: []
     m_Floats:
-    - _lineWidth: 24
-    - _rotationAngle: 0
+    - _lineWidth: 8.3
+    - _rotationAngle: 4.75
     - _scrollSpeed: 0.6
     m_Colors:
     - _highStripeTint: {r: 0.27735847, g: 0.8774651, b: 1, a: 1}
