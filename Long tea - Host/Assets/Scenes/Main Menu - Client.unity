@@ -4174,47 +4174,12 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2034292222, guid: 954f12aaa1c53444e812ca725b904adf, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2034292223, guid: 954f12aaa1c53444e812ca725b904adf, type: 3}
       propertyPath: OnServerFound.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 441230687}
-    - target: {fileID: 2034292223, guid: 954f12aaa1c53444e812ca725b904adf, type: 3}
-      propertyPath: OnServerFound.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: OnDiscoveredServer
-      objectReference: {fileID: 0}
-    - target: {fileID: 3613236710445110320, guid: 954f12aaa1c53444e812ca725b904adf,
-        type: 3}
-      propertyPath: offlineScene
-      value: Assets/Scenes/UI/Main Menu.unity
-      objectReference: {fileID: 0}
-    - target: {fileID: 4077133073632489879, guid: 954f12aaa1c53444e812ca725b904adf,
-        type: 3}
-      propertyPath: showRoomGUI
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4077133073632489879, guid: 954f12aaa1c53444e812ca725b904adf,
-        type: 3}
-      propertyPath: roomPlayerPrefab
-      value: 
-      objectReference: {fileID: -8078986351075251121, guid: bdea314f33bacbb4c901ba808c2e01a8,
-        type: 3}
-    - target: {fileID: 4077133073632489879, guid: 954f12aaa1c53444e812ca725b904adf,
-        type: 3}
-      propertyPath: playerSpawnMethod
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4077133073632489879, guid: 954f12aaa1c53444e812ca725b904adf,
-        type: 3}
-      propertyPath: spawnPrefabs.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4077133073632489879, guid: 954f12aaa1c53444e812ca725b904adf,
-        type: 3}
-      propertyPath: spawnPrefabs.Array.data[1]
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 5081631546137585481, guid: 954f12aaa1c53444e812ca725b904adf,
         type: 3}
       propertyPath: m_Name
@@ -4275,13 +4240,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7052516526719678528, guid: 954f12aaa1c53444e812ca725b904adf,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 7052516526719678528, guid: 954f12aaa1c53444e812ca725b904adf, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 954f12aaa1c53444e812ca725b904adf, type: 3}
 --- !u!114 &1115046089 stripped
 MonoBehaviour:
@@ -7436,7 +7395,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 72.35
+  m_fontSize: 72.3
   m_fontSizeBase: 86
   m_fontWeight: 400
   m_enableAutoSizing: 1
