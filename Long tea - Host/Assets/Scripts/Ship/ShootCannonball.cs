@@ -11,6 +11,6 @@ public class ShootCannonball : NetworkBehaviour
     public void ShootBall(Vector3 spawnPosition, Quaternion spawnOrientation)
     {
         GameObject cannonBallCopy = Instantiate(cannonBallPrefab, spawnPosition, spawnOrientation);
-        NetworkServer.Spawn(cannonBallCopy);
+        NetworkServer.Spawn(cannonBallCopy, connectionToClient);
     }
 }
