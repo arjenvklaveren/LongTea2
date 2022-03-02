@@ -16,7 +16,7 @@ PlayerSettings:
   productName: Party Pirates
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
-  m_SplashScreenBackgroundColor: {r: 0.17254902, g: 0.81568635, b: 0.9725491, a: 1}
+  m_SplashScreenBackgroundColor: {r: 0.3339622, g: 0.8699453, b: 1, a: 1}
   m_ShowUnitySplashScreen: 1
   m_ShowUnitySplashLogo: 0
   m_SplashScreenOverlayOpacity: 1
@@ -136,7 +136,7 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleVersion: 0.191
+  bundleVersion: 0.202
   preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0
@@ -274,7 +274,7 @@ PlayerSettings:
   - m_BuildTarget: 
     m_Icons:
     - serializedVersion: 2
-      m_Icon: {fileID: 2800000, guid: 7c2e79394c3ed1d4da86cb52221a2f7b, type: 3}
+      m_Icon: {fileID: 2800000, guid: ee9eeaf304d93bd4aa9251f38d5d0542, type: 3}
       m_Width: 128
       m_Height: 128
       m_Kind: 0

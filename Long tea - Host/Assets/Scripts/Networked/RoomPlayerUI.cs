@@ -17,15 +17,6 @@ public class RoomPlayerUI : NetworkRoomPlayer
     [SyncVar] public string playerName = "Unknown name";
     [SyncVar] public int score = 0;
 
-    private void Start()
-    {
-        base.Start();
-        if (isLocalPlayer)
-        {
-            SetRandomPlayerName();
-        }
-    }
-
     [Command]
     public void ChangePlayerScore(int newScore)
     {
@@ -45,11 +36,12 @@ public class RoomPlayerUI : NetworkRoomPlayer
     }
 
     [ContextMenu("Change name to random")]
-    public void SetRandomPlayerName()
+    public string SetRandomPlayerName()
     {
         string[] randomNames = { "Don Juan", "Party Pipo", "Joe Momma", "Pesky Bird", "Astley Rick" };
         string randomName = randomNames[Random.Range(0, randomNames.Length)];
 
         ChangePlayerName(randomName);
+        return randomName;
     }
 }

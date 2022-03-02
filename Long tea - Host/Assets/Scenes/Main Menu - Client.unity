@@ -4606,10 +4606,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2034292222, guid: 954f12aaa1c53444e812ca725b904adf, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2034292223, guid: 954f12aaa1c53444e812ca725b904adf, type: 3}
       propertyPath: OnServerFound.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -8089,7 +8085,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 72.3
+  m_fontSize: 72.35
   m_fontSizeBase: 86
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -8535,7 +8531,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -1536.0001}
+  m_AnchoredPosition: {x: 0, y: -1536}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1957233638
