@@ -36,6 +36,11 @@ public class NetworkShortcuts : MonoBehaviour
         NetworkManager.singleton.StartServer();
     }
 
+    public void MoveServerToScene(string sceneName)
+    {
+        NetworkManager.singleton.ServerChangeScene(sceneName);
+    }
+
     public void StartHostAndOpenForPublic()
     {
         if (networkDiscovery != null)
