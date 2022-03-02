@@ -14,6 +14,7 @@ public class NetworkRoomManagerExt : NetworkRoomManager
 
     private void Start()
     {
+        base.Start();
         InvokeRepeating("TryUpdatePlayerUI", 0.1f, 1.5f);
     }
 
