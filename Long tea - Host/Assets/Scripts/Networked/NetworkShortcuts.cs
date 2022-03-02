@@ -54,6 +54,11 @@ public class NetworkShortcuts : MonoBehaviour
         }
     }
 
+    public void LeaveGame()
+    {
+        NetworkManager.singleton.StopClient();
+    }
+
     public void StartGame()
     {
         if(networkRoomManager == null)
