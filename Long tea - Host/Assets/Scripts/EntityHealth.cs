@@ -6,8 +6,8 @@ using Mirror;
 
 public class EntityHealth : NetworkBehaviour
 {
-    [SerializeField, SyncVar(hook = "OnHealthChanged")] public int health = 100;
-    [SerializeField, SyncVar] private bool canTakeDamage = true;
+    [SyncVar(hook = "OnHealthChanged")] public int health = 100;
+    [SyncVar] public bool canTakeDamage = true;
 
     [Header("Hit and Death events")]
     [SerializeField] private UnityEvent OnHitLocal;
@@ -15,7 +15,7 @@ public class EntityHealth : NetworkBehaviour
     [SerializeField] private UnityEvent OnDeathLocal;
     [SerializeField] private UnityEvent OnDeathOther;
 
-    [SyncVar] protected bool isDead = false;
+    [SyncVar] public bool isDead = false;
 
 
     [ClientRpc]
@@ -23,7 +23,6 @@ public class EntityHealth : NetworkBehaviour
     {
         //OnHealthChanged();
     }
-
 
     public void DealDamage(int damageAmount)
     {

@@ -18,13 +18,13 @@ public class SpawnOverNetwork : NetworkBehaviour
     public void SpawnItem()
     {
         GameObject spawnedObject = Instantiate(objectToSpawn, spawnTransform.position, spawnTransform.rotation);
-        NetworkServer.Spawn(spawnedObject);
+        NetworkServer.Spawn(spawnedObject, connectionToClient);
     }
 
     [Command(requiresAuthority = false)]
     public void SpawnExisting(GameObject objectToSpawn)
     {
         Debug.Log($"Trying to spawn {objectToSpawn.name}");
-        NetworkServer.Spawn(objectToSpawn);
+        NetworkServer.Spawn(objectToSpawn, connectionToClient);
     }
 }
