@@ -645,8 +645,8 @@ Canvas:
   m_GameObject: {fileID: 350900723}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_RenderMode: 1
+  m_Camera: {fileID: 1759295336}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -706,6 +706,7 @@ GameObject:
   - component: {fileID: 395832122}
   - component: {fileID: 395832124}
   - component: {fileID: 395832123}
+  - component: {fileID: 395832125}
   m_Layer: 5
   m_Name: Logo
   m_TagString: Untagged
@@ -771,6 +772,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 395832121}
   m_CullTransparentMesh: 1
+--- !u!114 &395832125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 395832121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94c496d60c693ea418843f2ddfe99acf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bobSpeed: 2
+  bobDistance: 10
+  bobOffsetTime: 100
 --- !u!1 &459364769
 GameObject:
   m_ObjectHideFlags: 0
@@ -2429,7 +2445,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 128, y: 127.99998}
+  m_AnchoredPosition: {x: 128, y: 127.99997}
   m_SizeDelta: {x: 192, y: 192}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1520549124
@@ -3162,7 +3178,7 @@ Camera:
   m_GameObject: {fileID: 1759295334}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
+  m_ClearFlags: 4
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
@@ -3227,7 +3243,7 @@ MonoBehaviour:
   priority: 0
   blendDistance: 0
   weight: 1
-  sharedProfile: {fileID: 0}
+  sharedProfile: {fileID: 11400000, guid: dd05597c22aab514caf6e5afee8bb7bb, type: 2}
 --- !u!114 &1759295339
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3251,8 +3267,8 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
-  m_Antialiasing: 0
+  m_RenderPostProcessing: 1
+  m_Antialiasing: 1
   m_AntialiasingQuality: 2
   m_StopNaN: 0
   m_Dithering: 0
