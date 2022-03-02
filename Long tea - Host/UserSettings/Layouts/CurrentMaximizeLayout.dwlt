@@ -188,8 +188,8 @@ MonoBehaviour:
     y: 0
     width: 387.2
     height: 549.6
-  m_MinSize: {x: 201, y: 221}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 6}
   m_Panes:
   - {fileID: 6}
@@ -227,23 +227,23 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 42b60000
-      m_LastClickedID: 46658
-      m_ExpandedIDs: 6413fffff017ffffc618ffff381cffffbe85ffff9a98ffff9c98ffffbe98ffffbe99ffff12fbffffd07000003471000036720000d672000018730000f49a0000fe9a0000e4a90000d0b50000
+      m_SelectedIDs: 22f50100
+      m_LastClickedID: 128290
+      m_ExpandedIDs: 6a71fcff287ffcff5c80fcff0085fcffca85fcff8a94fcffde9efcff6ca4fcff7ca5fcffe0a5fcffe8a5fcff02a6fcff64a6fcff2ecbfcff08d0fcff12d1fcff76d1fcff7ed1fcff98d1fcfffad1fcff0ee4fcff1ce5fcff9ce5fcffc0e5fcfff6e5fcff74e6fcff560ffdff6010fdffc810fdffd410fdfff210fdff5811fdfff876fdff0278fdff6678fdff6e78fdff8878fdffea78fdffac91fdffb692fdff1a93fdff2293fdff3c93fdff9e93fdff1aa3fdffb0acfdffbaadfdff1eaefdff26aefdff40aefdffa2aefdffd8c6fdffe4c7fdff48c8fdff50c8fdff6ac8fdffccc8fdffa4d6fdffbcdbfdff38e3fdff46e4fdff66e7fdff72e7fdff8ce7fdff00e8fdffcc3cfeff64a8feff3ad2feff46dffeff48dffeff6adffeff42e0feffeaebfeff3a0cffff6413fffff017ffffc618ffff381cffffbe85ffff9a98ffff9c98ffffbe98ffffbe99ffff12fbfffff4ffffffd07000003471000036720000d672000018730000f49a0000fe9a0000e4a90000d0b5000024bb0000b2bb0000bcbb000088bc0000eabc0000a2c1000044c90000ced30000e6d30000645e0100a6e10100fee101006ef00100faf001002af50100
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: 
-        m_OriginalName: 
+        m_Name: RoomPlayer(Clone)
+        m_OriginalName: RoomPlayer(Clone)
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 0
+        m_UserData: -221388
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 11
+        m_OriginalEventType: 0
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 5}
       m_SearchString: 
@@ -313,8 +313,8 @@ MonoBehaviour:
       floating: 0
       collapsed: 0
       displayed: 1
-      snapOffset: {x: 0, y: 0}
-      snapOffsetDelta: {x: -100, y: -25.600006}
+      snapOffset: {x: -100, y: -25.600006}
+      snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 3
       id: Tool Settings
       index: 0
@@ -335,7 +335,7 @@ MonoBehaviour:
       floating: 0
       collapsed: 0
       displayed: 1
-      snapOffset: {x: 0, y: 0}
+      snapOffset: {x: 0, y: 24.8}
       snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 0
       id: unity-scene-view-toolbar
@@ -379,7 +379,7 @@ MonoBehaviour:
       floating: 0
       collapsed: 0
       displayed: 1
-      snapOffset: {x: 0, y: 0}
+      snapOffset: {x: 0, y: 24.8}
       snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 0
       id: unity-transform-toolbar
@@ -527,9 +527,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -431.15738, y: 214, z: 0}
+    m_Target: {x: 0, y: 0, z: 0}
     speed: 2
-    m_Value: {x: -431.15738, y: 214, z: 0}
+    m_Value: {x: 0, y: 0, z: 0}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -576,13 +576,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.008109506, y: 0.0026831385, z: -0.000014982839, w: -0.99997485}
+    m_Target: {x: -0.014108114, y: 0.013181287, z: -0.00018713623, w: -0.9998257}
     speed: 2
-    m_Value: {x: -0.008109414, y: 0.002683108, z: -0.000014982669, w: -0.9999635}
+    m_Value: {x: -0.014107943, y: 0.013181127, z: -0.00018713396, w: -0.99981356}
   m_Size:
-    m_Target: 436.3325
+    m_Target: 10
     speed: 2
-    m_Value: 436.3325
+    m_Value: 10
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -600,7 +600,7 @@ MonoBehaviour:
     m_FarClip: 10000
     m_DynamicClip: 1
     m_OcclusionCulling: 0
-  m_LastSceneViewRotation: {x: -0.13499425, y: 0.49481457, z: -0.078126706, w: -0.85489976}
+  m_LastSceneViewRotation: {x: -0.014108114, y: 0.013181287, z: -0.00018713623, w: -0.9998257}
   m_LastSceneViewOrtho: 0
   m_ReplacementShader: {fileID: 0}
   m_ReplacementString: 
@@ -657,7 +657,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 18
+  controlID: 10627
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -738,10 +738,10 @@ MonoBehaviour:
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 31}
+    scrollPos: {x: 0, y: 27.799927}
     m_SelectedIDs: 46790000
     m_LastClickedID: 31046
-    m_ExpandedIDs: 000000001e79000020790000227900002479000026790000287900002a7900002c7900003479000048790000
+    m_ExpandedIDs: 000000001e79000020790000227900002479000026790000287900002a7900002c7900004279000048790000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -794,21 +794,21 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 42b60000
-    m_LastClickedInstanceID: 46658
+    m_SelectedInstanceIDs: 22f50100
+    m_LastClickedInstanceID: 128290
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000a0790000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: ToggleVolume
-      m_OriginalName: ToggleVolume
+      m_Name: Lobby
+      m_OriginalName: Lobby
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 36678
+      m_UserData: 32398
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
       m_OriginalEventType: 0
@@ -844,8 +844,8 @@ MonoBehaviour:
     y: 0
     width: 1176
     height: 461.20007
-  m_MinSize: {x: 102, y: 121}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
@@ -912,7 +912,7 @@ MonoBehaviour:
     m_SaveData: []
   m_MixersTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: a0790000
+    m_SelectedIDs: 
     m_LastClickedID: 31136
     m_ExpandedIDs: 12eb343c
     m_RenameOverlay:
