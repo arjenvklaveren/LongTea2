@@ -55,7 +55,9 @@ public class ShowServers : MonoBehaviour
         if(listItemPrefab != null)
         {
             GameObject serverListItem = Instantiate(listItemPrefab, listParent);
+
             serverListItem.transform.GetChild(0).GetComponent<TextMeshProUGUI>().SetText(info.EndPoint.Address.ToString());
+            //serverListItem.transform.GetChild(1).GetComponent<TextMeshProUGUI>().SetText(info.availableSlots.ToString());
 
             serverListItem.GetComponent<Button>().onClick.AddListener(delegate { listenersToAddToButton.Invoke(); });
             serverListItem.GetComponent<EventAfterTime>().timedEvent.AddListener(() => Connect(info));
