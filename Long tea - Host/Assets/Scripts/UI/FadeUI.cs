@@ -8,6 +8,7 @@ public class FadeUI : MonoBehaviour
 {
     private CanvasGroup canvasGroup = null;
     [SerializeField] private bool toggleInteractability = true;
+    [SerializeField] private bool toggleRaycastBlocking = true;
 
     private void Start()
     {
@@ -19,11 +20,13 @@ public class FadeUI : MonoBehaviour
     {
         canvasGroup.DOFade(0f, speed).SetUpdate(true);
         if(toggleInteractability) canvasGroup.interactable = false;
+        if (toggleRaycastBlocking) canvasGroup.blocksRaycasts = false;
     }
 
     public void FadeIn(float speed)
     {
         canvasGroup.DOFade(1f, speed).SetUpdate(true);
         if(toggleInteractability) canvasGroup.interactable = true;
+        if (toggleRaycastBlocking) canvasGroup.blocksRaycasts = true;
     }
 }

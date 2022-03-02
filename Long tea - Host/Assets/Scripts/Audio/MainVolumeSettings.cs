@@ -2,56 +2,37 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
-using UnityEngine.UI;
 
-public class ToggleVolume : MonoBehaviour
+public class MainVolumeSettings : MonoBehaviour
 {
     [SerializeField] private AudioMixerGroup masterGroup = null;
     [SerializeField] private string mixerName = "MasterVolume";
     [SerializeField] private float fadeTime = 1f;
-    [SerializeField] private Toggle audioToggle;
-
+    [SerializeField] private bool fadeInOnStart = true;
     private float targetLevel = 0f;
 
     void Start()
     {
         targetLevel = PlayerPrefs.GetFloat(mixerName, 0f);
-        if(audioToggle != null)
+        if (fadeInOnStart)
         {
-            audioToggle.isOn = targetLevel == 0f;
-        }
-        ToggleInstant();
-    }
-
-    public void ToggleInstant()
-    {
-        if (audioToggle.isOn)
-        {
-            masterGroup.audioMixer.SetFloat(mixerName, 0);
-            PlayerPrefs.SetFloat(mixerName, 0f);
+            masterGroup.audioMixer.SetFloat(mixerName, -80f);
+            FadeIn();
         }
         else
         {
-            masterGroup.audioMixer.SetFloat(mixerName, -80f);
-            PlayerPrefs.SetFloat(mixerName, -80f);
+            masterGroup.audioMixer.SetFloat(mixerName, targetLevel);
         }
-    }
-
-    public void Toggle()
-    {
-        if (audioToggle.isOn) { FadeIn(); } else { FadeOut(); }
     }
 
     public void FadeIn()
     {
-        StartCoroutine(FadeToTarget(0f));
-        PlayerPrefs.SetFloat(mixerName, 0f);
+        StartCoroutine(FadeToTarget(targetLevel));
     }
 
     public void FadeOut()
     {
         StartCoroutine(FadeToTarget(-80f));
-        PlayerPrefs.SetFloat(mixerName, -80f);
     }
 
     public void FadeToVolumeLevel(float volumeLevel)

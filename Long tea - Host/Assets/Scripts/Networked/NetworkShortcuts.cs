@@ -62,6 +62,7 @@ public class NetworkShortcuts : MonoBehaviour
     public void LeaveGame()
     {
         NetworkManager.singleton.StopClient();
+        NetworkManager.singleton.StopServer();
     }
 
     public void StartGame()

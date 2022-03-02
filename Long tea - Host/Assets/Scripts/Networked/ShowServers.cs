@@ -5,12 +5,14 @@ using UnityEngine;
 using Mirror;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class ShowServers : MonoBehaviour
 {
     [Header("List settings")]
     [SerializeField] private Transform listParent;
     [SerializeField] private GameObject listItemPrefab;
+    [SerializeField] private UnityEvent listenersToAddToButton;
 
     [Header("Discovery settings")]
     readonly Dictionary<long, ServerResponse> discoveredServers = new Dictionary<long, ServerResponse>();
@@ -54,7 +56,9 @@ public class ShowServers : MonoBehaviour
         {
             GameObject serverListItem = Instantiate(listItemPrefab, listParent);
             serverListItem.transform.GetChild(0).GetComponent<TextMeshProUGUI>().SetText(info.EndPoint.Address.ToString());
-            serverListItem.GetComponent<Button>().onClick.AddListener(() => Connect(info));
+
+            serverListItem.GetComponent<Button>().onClick.AddListener(delegate { listenersToAddToButton.Invoke(); });
+            serverListItem.GetComponent<EventAfterTime>().timedEvent.AddListener(() => Connect(info));
         }
     }
 
