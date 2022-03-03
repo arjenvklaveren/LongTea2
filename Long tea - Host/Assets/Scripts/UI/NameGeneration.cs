@@ -19,14 +19,12 @@ public class NameGeneration : MonoBehaviour
     {
         RoomPlayerUI[] playerUI = GameObject.FindObjectsOfType<RoomPlayerUI>();
 
-        Debug.Log("Doing things with players and such");
         foreach (RoomPlayerUI playerUIInstance in playerUI)
         {
             Debug.Log(playerUIInstance.playerName);
             if (playerUIInstance.hasAuthority)
             {
                 owner = playerUIInstance;
-                Debug.Log("Owner is " + playerUIInstance.playerName);
                 break;
             }
         }

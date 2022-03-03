@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using Mirror;
+using UnityEngine.UI;
+using DG.Tweening;
 
 public class EntityHealth : NetworkBehaviour
 {
     [SyncVar(hook = "OnHealthChanged")] public int health = 100;
     [SyncVar] public bool canTakeDamage = true;
+    [SerializeField] private float healthbarMoveSpeed = 0.5f;
 
     [Header("Hit and Death events")]
     [SerializeField] private UnityEvent OnHitLocal;
@@ -17,11 +20,36 @@ public class EntityHealth : NetworkBehaviour
 
     [SyncVar] public bool isDead = false;
 
+    private Image healthBar;
+    private int startValue;
+
+    private void Start()
+    {
+        if (isLocalPlayer || isServer)
+        {
+            startValue = health;
+        }
+    }
+
 
     [ClientRpc]
     public virtual void RPCSetHealth()
     {
         //OnHealthChanged();
+    }
+
+    public void CoupleHealthbar(Image healthBarReference)
+    {
+        healthBar = healthBarReference;
+    }
+
+    public void UpdateHealthBar()
+    {
+        if (isLocalPlayer && healthBar)
+        {
+            healthBar.DOComplete();
+            healthBar.DOFillAmount((float)health / (float)startValue, healthbarMoveSpeed);
+        }
     }
 
     public void DealDamage(int damageAmount)
@@ -48,12 +76,12 @@ public class EntityHealth : NetworkBehaviour
 
     public void OnHealthChanged(int oldHealth, int newHealth)
     {
-        Debug.Log($"Health is {health}");
         if (health <= 0)
         {            
             if (isLocalPlayer)
             {
                 OnDeathLocal.Invoke();
+                UpdateHealthBar();
             }
             else
             {
@@ -65,6 +93,7 @@ public class EntityHealth : NetworkBehaviour
             if (isLocalPlayer)
             {
                 OnHitLocal.Invoke();
+                UpdateHealthBar();
             }
             else
             {

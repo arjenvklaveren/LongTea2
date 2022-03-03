@@ -22,7 +22,8 @@ public class ActivateWithTag : MonoBehaviour
         GameObject foundObject = GameObject.FindGameObjectWithTag(tagname);
         if (foundObject)
         {
-            foundObject.GetComponent<FadeUI>().FadeIn(0.5f);
+            if(foundObject.TryGetComponent(out FadeUI fadeUI)) fadeUI.FadeIn(0.5f);
+            if (foundObject.TryGetComponent(out EventAfterTime eventAfterTime)) eventAfterTime.StartTimedEvent();
         }
         else
         {

@@ -11,22 +11,14 @@ public class Ammo : NetworkBehaviour
 
     void Start()
     {
-        Debug.Log("CANNONBALL");
-        Debug.Log($"Local player is {isLocalPlayer}");
-        Debug.Log($"Is server is {isServer}");
-        Debug.Log($"Has authority is {hasAuthority}");
-
         RoomPlayerUI[] playerUI = GameObject.FindObjectsOfType<RoomPlayerUI>();
         if (hasAuthority)
         {
-            Debug.Log("Doing things with players and such");
             foreach (RoomPlayerUI playerUIInstance in playerUI)
             {
-                Debug.Log(playerUIInstance.playerName);
                 if (playerUIInstance.hasAuthority)
                 {
                     owner = playerUIInstance;
-                    Debug.Log("Owner is " + playerUIInstance.playerName);
                     break;
                 }
             }

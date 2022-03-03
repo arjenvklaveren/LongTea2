@@ -20,12 +20,18 @@ public class Cannon : MonoBehaviour
         if(shootCannonballReference != null)
         {
             shootCannonballReference.ShootBall(barrelTip.position, barrelPivot.rotation);
-            if (shootParticles) shootParticles.Play();
+            if (shootParticles)
+            {
+                shootParticles.Play();
+            }
         }
         else
         {
             shootCannonballReferenceOffline.ShootBall(barrelTip.position, barrelPivot.rotation);
-            if (shootParticles) shootParticles.Play();
+            if (shootParticles)
+            {
+                shootParticles.Play();
+            }
         }
         
     }

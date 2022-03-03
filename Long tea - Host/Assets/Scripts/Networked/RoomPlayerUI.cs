@@ -15,7 +15,19 @@ public class RoomPlayerUI : NetworkRoomPlayer
 
     [Header("Player settings")]
     [SyncVar] public string playerName = "Unknown name";
-    [SyncVar] public int score = 0;
+    [SyncVar(hook = "UpdateScoreLabel")] public int score = 0;
+
+    private TextMeshProUGUI scoreLabel;
+
+    public void CoupleScoreLabel(TextMeshProUGUI scoreLabelReference)
+    {
+        scoreLabel = scoreLabelReference;
+    }
+
+    public void UpdateScoreLabel(int oldScore, int newScore)
+    {
+        if (scoreLabel) scoreLabel.text = $"{newScore}";
+    }
 
     [Command]
     public void ChangePlayerScore(int newScore)

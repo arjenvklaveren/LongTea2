@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4934949440801802754}
   - component: {fileID: 4934949440801802752}
   - component: {fileID: 4934949440801802755}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: WeaponParticles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
