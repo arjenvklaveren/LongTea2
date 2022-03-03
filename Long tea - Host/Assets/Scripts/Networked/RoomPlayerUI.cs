@@ -38,7 +38,7 @@ public class RoomPlayerUI : NetworkRoomPlayer
     [ContextMenu("Change name to random")]
     public string SetRandomPlayerName()
     {
-        string[] randomNames = { "Don Juan", "Party Pipo", "Joe Momma", "Pesky Bird", "Astley Rick" };
+        string[] randomNames = { "Gold eyed Ziggy", "Party Pipo", "Captain Pete", "Pesky Bird", "Astley Rick", "Gordon Freecat" };
         string randomName = randomNames[Random.Range(0, randomNames.Length)];
 
         ChangePlayerName(randomName);
