@@ -12,6 +12,12 @@ public class NetworkRoomManagerExt : NetworkRoomManager
     private Transform playerListTransform;
     private List<NetworkRoomPlayer> playersInRoom;
 
+    private void Start()
+    {
+        base.Start();
+        InvokeRepeating("TryUpdatePlayerUI", 0.1f, 1.5f);
+    }
+
     public override void OnServerConnect(NetworkConnection conn)
     {
         base.OnServerConnect(conn);
@@ -24,11 +30,9 @@ public class NetworkRoomManagerExt : NetworkRoomManager
         StartCoroutine(UpdateRoomPlayerList());
     }
 
-
     public override void OnClientConnect()
     {
         base.OnClientConnect();
-        InvokeRepeating("TryUpdatePlayerUI", 0.1f, 1.5f);
     }
 
 
@@ -61,13 +65,13 @@ public class NetworkRoomManagerExt : NetworkRoomManager
         playersInRoom = roomSlots;
         for (int i = 0; i < playersInRoom.Count; i++)
         {
-            CreatePlayerUIItem(playersInRoom[i]);
+            CreatePlayerUIItem((RoomPlayerUI)playersInRoom[i]);
         }
     }
 
-    private void CreatePlayerUIItem(NetworkRoomPlayer playerInfo)
+    private void CreatePlayerUIItem(RoomPlayerUI playerInfo)
     {
         GameObject playerUI = Instantiate(UIPrefab, playerListTransform);
-        playerUI.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = $"Player {playerInfo.index}";
+        playerUI.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = playerInfo.playerName;
     }
 }

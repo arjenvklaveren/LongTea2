@@ -6,40 +6,82 @@ using Mirror;
 
 public class EntityHealth : NetworkBehaviour
 {
-    [SerializeField, SyncVar] public float health = 100f;
-    [SerializeField] private UnityEvent OnHit;
-    [SerializeField] private UnityEvent OnDeath;
-	[SerializeField, SyncVar] private bool canTakeDamage = true;
+    [SyncVar(hook = "OnHealthChanged")] public int health = 100;
+    [SyncVar] public bool canTakeDamage = true;
 
-    [SyncVar] protected bool isDead = false;
-    protected float startHealth = 100f;
+    [Header("Hit and Death events")]
+    [SerializeField] private UnityEvent OnHitLocal;
+    [SerializeField] private UnityEvent OnHitOther;
+    [SerializeField] private UnityEvent OnDeathLocal;
+    [SerializeField] private UnityEvent OnDeathOther;
 
-    public override void OnStartClient()
-    {
-        startHealth = health;
-    }
+    [SyncVar] public bool isDead = false;
 
-    [Command(requiresAuthority = false)]
-    public virtual void DealDamage(float damageAmount)
-    {
-        //Skip is entity is already dead
-        if (isDead || !canTakeDamage) return;
-
-        health -= damageAmount;
-        UpdateHits();
-    }
 
     [ClientRpc]
-    public void UpdateHits()
+    public virtual void RPCSetHealth()
     {
-        if (health <= 0)
+        //OnHealthChanged();
+    }
+
+    public void DealDamage(int damageAmount)
+    {
+        if (!isServer || isDead || !canTakeDamage)
         {
-            OnDeath.Invoke();
+            return;
+        }
+
+        health -= damageAmount;
+
+        if(health <= 0)
+        {
             isDead = true;
+        }
+
+        if (isServerOnly)
+        {
+            UpdateHitsServer();
+        }
+
+        RPCSetHealth();        
+    }
+
+    public void OnHealthChanged(int oldHealth, int newHealth)
+    {
+        Debug.Log($"Health is {health}");
+        if (health <= 0)
+        {            
+            if (isLocalPlayer)
+            {
+                OnDeathLocal.Invoke();
+            }
+            else
+            {
+                OnDeathOther.Invoke();
+            }
         }
         else
         {
-            OnHit.Invoke();
+            if (isLocalPlayer)
+            {
+                OnHitLocal.Invoke();
+            }
+            else
+            {
+                OnHitOther.Invoke();
+            }
+        }
+    }
+
+    public void UpdateHitsServer()
+    {
+        if (health <= 0)
+        {
+            OnDeathOther.Invoke();
+        }
+        else
+        {
+            OnHitOther.Invoke();
         }
     }
 }

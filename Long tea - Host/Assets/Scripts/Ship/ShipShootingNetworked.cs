@@ -40,7 +40,6 @@ public class ShipShootingNetworked : NetworkBehaviour
 
     void DetectTouch()
     {
-        Debug.Log(Input.touchCount);
         //Aiming
         if (Input.touchCount == 1)
         {
