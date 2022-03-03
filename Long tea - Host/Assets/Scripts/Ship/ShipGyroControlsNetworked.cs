@@ -16,6 +16,8 @@ public class ShipGyroControlsNetworked : NetworkBehaviour
 
     private float moveAcceleration;
 
+    public float moveSpeedRate = 5000;
+
     public override void OnStartLocalPlayer()
     {
         base.OnStartLocalPlayer();
