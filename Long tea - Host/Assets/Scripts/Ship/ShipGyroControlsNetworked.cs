@@ -16,6 +16,8 @@ public class ShipGyroControlsNetworked : NetworkBehaviour
 
     private float moveAcceleration;
 
+    public float moveSpeedRate = 5000;
+
     public override void OnStartLocalPlayer()
     {
         base.OnStartLocalPlayer();
@@ -62,6 +64,6 @@ public class ShipGyroControlsNetworked : NetworkBehaviour
                 moveAcceleration -= (accelerationRate / 50);
             }
         }
-        rb.AddForce(transform.forward * (moveAcceleration * 5000) * Time.fixedDeltaTime);
+        rb.AddForce(transform.forward * (moveAcceleration * moveSpeedRate) * Time.fixedDeltaTime);
     }
 }
