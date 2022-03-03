@@ -10,10 +10,20 @@ public class Cannon : MonoBehaviour
     public Transform barrelPivot;
     public AudioSource shootSound;
     public ShootCannonball shootCannonballReference;
+    public ShootCannonballOffline shootCannonballOfflineReference;
 
     public void Shoot()
     {
         shootSound.Play();
-        shootCannonballReference.ShootBall(barrelTip.position, barrelPivot.rotation);
+
+        if(shootCannonballReference != null)
+        {
+            shootCannonballReference.ShootBall(barrelTip.position, barrelPivot.rotation);
+        }
+        else
+        {
+            shootCannonballOfflineReference.ShootBall(barrelTip.position, barrelPivot.rotation);
+        }
+        
     }
 }

@@ -96,8 +96,7 @@ GameObject:
   - component: {fileID: 2702476096363686599}
   - component: {fileID: 2702476096363686598}
   - component: {fileID: 838410546977940433}
-  - component: {fileID: 4503707613873165265}
-  - component: {fileID: 5328069083420665523}
+  - component: {fileID: 5457695581096552172}
   m_Layer: 0
   m_Name: GyroShipFull
   m_TagString: Player
@@ -112,7 +111,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 608482359388194643}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -28.265892, y: 0.0000076293945, z: -44.566383}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_ConstrainProportionsScale: 0
@@ -189,6 +188,7 @@ MonoBehaviour:
   steerDeadzone: 0.1
   minimumSpeed: 5
   maximumSpeed: 10
+  hasPowerup: 0
 --- !u!65 &838410546977940433
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -202,7 +202,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 676.9443, y: 1602.1487, z: 2091.3127}
   m_Center: {x: 2.2733688, y: 563.42804, z: -178.60083}
---- !u!114 &4503707613873165265
+--- !u!114 &5457695581096552172
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -211,29 +211,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 608482359388194643}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Script: {fileID: 11500000, guid: f5acfd0b969a09c4faeb383399a7fd0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneId: 0
-  serverOnly: 0
-  visible: 0
-  m_AssetId: dc4b6fc8f141e31488996e30e301f91d
-  hasSpawned: 0
---- !u!114 &5328069083420665523
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 608482359388194643}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ed3849b60dd3fb4cbf8eb2f3a819e3e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  syncMode: 0
-  syncInterval: 0.1
-  cannonBallPrefab: {fileID: 161855267053302966, guid: 37d72fade4bed384c87ddf7ad4f6ae35,
+  cannonBallPrefab: {fileID: 161855267053302966, guid: c21b9f5d5005e924ca7387e83c0bbf64,
     type: 3}
 --- !u!1 &707689266509449841
 GameObject:
@@ -1421,7 +1402,8 @@ MonoBehaviour:
   barrelTip: {fileID: 4570177316723100610}
   barrelPivot: {fileID: 2702476096048120850}
   shootSound: {fileID: 4570177315962091340}
-  shootCannonballReference: {fileID: 5328069083420665523}
+  shootCannonballReference: {fileID: 0}
+  shootCannonballOfflineReference: {fileID: 5457695581096552172}
 --- !u!82 &4570177315962091340
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1859,7 +1841,8 @@ MonoBehaviour:
   barrelTip: {fileID: 4570177316735001862}
   barrelPivot: {fileID: 2702476095697666370}
   shootSound: {fileID: 4570177316597946081}
-  shootCannonballReference: {fileID: 5328069083420665523}
+  shootCannonballReference: {fileID: 0}
+  shootCannonballOfflineReference: {fileID: 5457695581096552172}
 --- !u!82 &4570177316597946081
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2297,7 +2280,8 @@ MonoBehaviour:
   barrelTip: {fileID: 4570177316891321987}
   barrelPivot: {fileID: 2702476095429958929}
   shootSound: {fileID: 4570177317043166998}
-  shootCannonballReference: {fileID: 5328069083420665523}
+  shootCannonballReference: {fileID: 0}
+  shootCannonballOfflineReference: {fileID: 5457695581096552172}
 --- !u!82 &4570177317043166998
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2443,7 +2427,8 @@ MonoBehaviour:
   barrelTip: {fileID: 4570177317237661667}
   barrelPivot: {fileID: 2702476095557500641}
   shootSound: {fileID: 4570177317164866362}
-  shootCannonballReference: {fileID: 5328069083420665523}
+  shootCannonballReference: {fileID: 0}
+  shootCannonballOfflineReference: {fileID: 5457695581096552172}
 --- !u!82 &4570177317164866362
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2672,7 +2657,8 @@ MonoBehaviour:
   barrelTip: {fileID: 4570177315728832350}
   barrelPivot: {fileID: 2702476095978001480}
   shootSound: {fileID: 4570177317333443881}
-  shootCannonballReference: {fileID: 5328069083420665523}
+  shootCannonballReference: {fileID: 0}
+  shootCannonballOfflineReference: {fileID: 5457695581096552172}
 --- !u!82 &4570177317333443881
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3482,7 +3468,8 @@ MonoBehaviour:
   barrelTip: {fileID: 3058477157986879637}
   barrelPivot: {fileID: 2702476095651667381}
   shootSound: {fileID: 9187110491232074550}
-  shootCannonballReference: {fileID: 5328069083420665523}
+  shootCannonballReference: {fileID: 0}
+  shootCannonballOfflineReference: {fileID: 5457695581096552172}
 --- !u!82 &9187110491232074550
 AudioSource:
   m_ObjectHideFlags: 0
