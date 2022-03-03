@@ -13,6 +13,6 @@ public class SpeedPowerup : Powerup
 
     IEnumerator SpeedUp()
     {
-
+        yield return new WaitForSeconds(10);
     }
 }
