@@ -39,6 +39,7 @@ public class Ammo : NetworkBehaviour
         if (playerObject.TryGetComponent(out EntityHealth entityHealth) && entityHealth.canTakeDamage && !entityHealth.isDead)
         {
             entityHealth.DealDamage(damage);
+            entityHealth.SetLastHitBy(owner);
             if (owner) owner.AddPlayerScore(scoreAmount);
             NetworkServer.Destroy(gameObject);
         }

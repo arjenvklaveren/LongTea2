@@ -379,10 +379,11 @@ MonoBehaviour:
   syncMode: 0
   syncInterval: 0.1
   accelerationRate: 3
-  steerSensitivity: 5
+  steerSensitivity: 25
   steerDeadzone: 0.1
-  minimumSpeed: 5
-  maximumSpeed: 10
+  minimumSpeed: 2
+  maximumSpeed: 12
+  moveSpeedRate: 5000
 --- !u!114 &3215583009842181609
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -456,6 +457,7 @@ MonoBehaviour:
   syncInterval: 0.1
   health: 100
   canTakeDamage: 1
+  healthbarMoveSpeed: 0.5
   OnHitLocal:
     m_PersistentCalls:
       m_Calls: []
@@ -468,6 +470,7 @@ MonoBehaviour:
   OnDeathOther:
     m_PersistentCalls:
       m_Calls: []
+  isDead: 0
 --- !u!114 &1693749450914362529
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -574,6 +577,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncMode: 0
   syncInterval: 0.1
+  targetTransform: {fileID: 0}
 --- !u!114 &3160037576971169268
 MonoBehaviour:
   m_ObjectHideFlags: 0

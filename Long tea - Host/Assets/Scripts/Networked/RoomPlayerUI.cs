@@ -50,7 +50,7 @@ public class RoomPlayerUI : NetworkRoomPlayer
     [ContextMenu("Change name to random")]
     public string SetRandomPlayerName()
     {
-        string[] randomNames = { "Gold eyed Ziggy", "Party Pipo", "Captain Pete", "Pesky Bird", "Astley Rick", "Gordon Freecat" };
+        string[] randomNames = { "Golden eye Ziggy", "John Silvertongue", "Cyphia Truesail", "Igor Rust-Leg", "Speck Jarrow", "Gordon Freline", "Davy Noble-Blood", "Kieran Braveheart", "Zaffir Stromgale", "Lyon Ironbeard", "Gore the Butcher", "One-Eyed Jarrrvis" };
         string randomName = randomNames[Random.Range(0, randomNames.Length)];
 
         ChangePlayerName(randomName);
