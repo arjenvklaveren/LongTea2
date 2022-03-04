@@ -30304,6 +30304,7 @@ GameObject:
   - component: {fileID: 1300073403}
   - component: {fileID: 1300073404}
   - component: {fileID: 1300073405}
+  - component: {fileID: 1300073406}
   m_Layer: 0
   m_Name: --== Host Components ==--
   m_TagString: Untagged
@@ -30626,6 +30627,18 @@ MonoBehaviour:
   syncInterval: 0.1
   scoreTextReference: {fileID: 1038826626}
   healthBar: {fileID: 130302156}
+--- !u!114 &1300073406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1300073395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4b3df9fbd502c14b8f355bbbb9d749a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1300428597
 PrefabInstance:
   m_ObjectHideFlags: 0
