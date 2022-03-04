@@ -63,7 +63,8 @@ public class EntityHealth : NetworkBehaviour
 
     public void SetLastHitBy(RoomPlayerUI lastHit)
     {
-        lastHitBy = lastHit;
+        if(lastHit) lastHitBy = lastHit;
+        Debug.Log("Last hit has been set to " + lastHitBy.playerName);
     }
 
     public void UpdateHealthBar()
@@ -101,7 +102,7 @@ public class EntityHealth : NetworkBehaviour
     public void TargetShowKilled(NetworkConnection target, string ownPlayerName)
     {
         killedByLabel.GetComponent<FadeUI>().FadeIn(1f);
-        killedByLabel.transform.GetChild(0).GetComponent<TMPro.TextMeshProUGUI>().text = $"You have killed '" + ownPlayerName + "'";
+        killedByLabel.transform.GetChild(0).GetComponent<TMPro.TextMeshProUGUI>().text = $"You have killed '{ownPlayerName}'";
         if(killedByLabel.TryGetComponent(out EventAfterTime eventAfterTime))
         {
             eventAfterTime.StartTimedEvent();
@@ -109,9 +110,8 @@ public class EntityHealth : NetworkBehaviour
     }
 
     [Command]
-    public void ShowOpponentKill()
+    public void ShowOpponentKill(RoomPlayerUI opponentIdentity)
     {
-        NetworkIdentity opponentIdentity = lastHitBy.netIdentity;
         TargetShowKilled(opponentIdentity.connectionToClient, ownRoomPlayerUI.playerName);
     }
 
@@ -123,6 +123,7 @@ public class EntityHealth : NetworkBehaviour
             {
                 OnDeathLocal.Invoke();
                 UpdateHealthBar();
+                //if(lastHitBy) ShowOpponentKill(lastHitBy);
             }
             else
             {

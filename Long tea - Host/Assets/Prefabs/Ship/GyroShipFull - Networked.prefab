@@ -356,8 +356,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 680, y: 900, z: 1990}
-  m_Center: {x: 0, y: 790, z: -110.00004}
+  m_Size: {x: 680, y: 969.7814, z: 1990}
+  m_Center: {x: 0, y: 755.1092, z: -110.00004}
 --- !u!114 &4503707613873165265
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -406,7 +406,7 @@ MonoBehaviour:
   syncMode: 0
   syncInterval: 0.1
   accelerationRate: 36
-  steerSensitivity: 17.5
+  steerSensitivity: 9
   steerDeadzone: 0.1
   minimumSpeed: 2
   maximumSpeed: 12
@@ -880,10 +880,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 340
-  m_Height: 1250
+  m_Radius: 339.99997
+  m_Height: 1320
   m_Direction: 1
-  m_Center: {x: 0, y: 620, z: 890}
+  m_Center: {x: 0, y: 585.6501, z: 889.99994}
 --- !u!136 &4466260548271361605
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -897,7 +897,7 @@ CapsuleCollider:
   m_Radius: 344.9967
   m_Height: 2333.1582
   m_Direction: 2
-  m_Center: {x: 0, y: 337.6966, z: 61.71446}
+  m_Center: {x: 0, y: 270, z: 61.71446}
 --- !u!114 &5430132556711782110
 MonoBehaviour:
   m_ObjectHideFlags: 0
